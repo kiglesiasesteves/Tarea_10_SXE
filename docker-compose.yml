@@ -25,7 +25,7 @@ services:  # Definición de los servicios que utilizará la aplicación
     volumes:  # Volúmenes para la persistencia de datos de PostgreSQL
       - odoo-db-data:/var/lib/postgresql/data  # Persistimos los datos de la base de datos en este volumen
     ports:  # Definimos el mapeo de puertos para acceder a PostgreSQL
-      - "5432:5432"  # El puerto 5432 de PostgreSQL se expone al mismo puerto en el host
+      - "5433:5432"  # Cambia el puerto externo a 5433
 
   pgadmin:  # Servicio para el gestor de base de datos PgAdmin
     restart: unless-stopped  # Aseguramos que PgAdmin se reinicie solo si se detiene inesperadamente

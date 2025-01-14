@@ -56,4 +56,17 @@ volumes:  # Definición de volúmenes persistentes para los datos de los servici
   odoo-db-data:  # Volumen para la persistencia de los datos de la base de datos PostgreSQL
   pgadmin-data:  # Volumen para guardar los datos persistentes de PgAdmin
 ```
+Al instalar este docker-compose hemos tenido este problema.
+
+AL ver cual era el servicio que estaba utilizando ya de por si este puerto podemos ver que es postgres. En este caso tenemos dos opciones dependiendo de lo que queramos hacer y de la prioridad que tiene el servicio nuevo que queremos instalar. Podemos parar el servicio de postgres que se está ejecutando en nuestro ordenador con el comadno
+```
+sudo systemctl stop postgresql
+```
+O podemos cambiar el puerto que tenemos en el docker compose por ejemplo al 5433.
+En nuestro caso no queremos eliminar el servicio de postgres en el ordenador así que cambiaremos el puerto del docker compose a
+```
+  db:
+    ports:
+      - "5433:5432"  # Cambia el puerto externo a 5433
+```
 

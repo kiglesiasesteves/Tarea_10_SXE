@@ -46,8 +46,8 @@ services:  # Definición de los servicios que utilizará la aplicación
     ports:  # Configuración de los puertos de PgAdmin
       - "5050:80"  # El puerto 80 de PgAdmin se mapea al puerto 5050 del host, para acceder desde un navegador
     environment:  # Variables de entorno para configurar la cuenta de PgAdmin
-      PGADMIN_DEFAULT_EMAIL: cr.m23@hotmail.com  # Correo electrónico de la cuenta de administrador de PgAdmin
-      PGADMIN_DEFAULT_PASSWORD: PgAdminPassword  # Contraseña de la cuenta de administrador de PgAdmin
+      PGADMIN_DEFAULT_EMAIL: kiglesiasesteves@danielcastelao.org  # Correo electrónico de la cuenta de administrador de PgAdmin
+      PGADMIN_DEFAULT_PASSWORD: PgAdmin  # Contraseña de la cuenta de administrador de PgAdmin
     volumes:  # Persistencia de los datos de configuración de PgAdmin
       - pgadmin-data:/var/lib/pgadmin  # Persistencia de los datos de PgAdmin en un volumen
 
@@ -103,6 +103,35 @@ Después de eso podemos logearnos con el email y contraseña que pusimos al regi
 Al registrarnos ya podemos estar dentro de Odoo
 
 ![ODOO](/img/entramosEnOdoo.png)
+
+### Instalación PGADMIN
+
+Ahora que tenemos Odoo COmmunity versión 17 instalado podemos ver si PGAdmin también se ha instalado correctamente. Para eso, vamos a entrar en el localhost:5050. En la interfaz colocamos los datos que pusimos en el localhost para el registro
+
+![PGADMIN](/img/PGADMIN.png)
+
+Después al entrar nos encontraremos con esto
+
+![PGADMIN](/img/DENTRODEPGADMIN.png)
+
+Pero no estará el servidor de odoo, por eso tenemos que añadir ese servidor con el siguiente proceso, siempre registrando las palabras que nosotros hemos colocadoe n nuestro docker-compose.Primero colocamso el nombre
+
+![PGADMIN](/img/registerServer.png)
+
+Posteriormente colocamos el puerto, la bd, los datos, el username...
+
+![PGADMIN](/img/registroServer2.png)
+
+Guardamos elservidor y tendremos esto en PGADMIN, comprobando su funcionamento
+
+![PGADMIN](/img/funcionamientoPGADMIN.png)
+
+
+
+
+
+
+
 
 
 

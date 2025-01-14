@@ -4,7 +4,7 @@ Este documento explica cómo instalar Odoo con Docker Compose, configurando Odoo
 
 # Índice
 
-1. [Crear el repositorio](#Instalación-ODOO)
+1. [Instalación ODOO](#Instalación-ODOO)
 2. [Docker-Compose](#DOCKER-COMPOSE)
 3. [Instalación de PGAdmin](#Instalación-PGADMIN)
 4. [Preguntas sobre la tarea](#preguntas-sobre-la-tarea)

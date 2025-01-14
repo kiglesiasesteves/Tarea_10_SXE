@@ -57,8 +57,13 @@ volumes:  # Definición de volúmenes persistentes para los datos de los servici
   pgadmin-data:  # Volumen para guardar los datos persistentes de PgAdmin
 ```
 Al instalar este docker-compose hemos tenido este problema.
+![Problema](/img/Screenshot_20250114_114033.png)
 
-AL ver cual era el servicio que estaba utilizando ya de por si este puerto podemos ver que es postgres. En este caso tenemos dos opciones dependiendo de lo que queramos hacer y de la prioridad que tiene el servicio nuevo que queremos instalar. Podemos parar el servicio de postgres que se está ejecutando en nuestro ordenador con el comadno
+
+AL ver cual era el servicio que estaba utilizando ya de por si este puerto podemos ver que es postgres.
+![postgres](/img/postgresEnUso.png)
+
+En este caso tenemos dos opciones dependiendo de lo que queramos hacer y de la prioridad que tiene el servicio nuevo que queremos instalar. Podemos parar el servicio de postgres que se está ejecutando en nuestro ordenador con el comadno
 ```
 sudo systemctl stop postgresql
 ```
@@ -69,4 +74,42 @@ En nuestro caso no queremos eliminar el servicio de postgres en el ordenador as�
     ports:
       - "5433:5432"  # Cambia el puerto externo a 5433
 ```
+
+Volvemos a subir los contenedores y podemos comprobar si se subieron con el comando
+sudo docker ps -a
+
+![subimosContenedores](/img/subidacontenedores.png)
+
+Ahoara ya podemos entrar en la dirección
+
+localhost:8069
+
+y nos encontramos con esto
+
+![ODOO](/img/odooWEB8069.png)
+
+Si llamamos a la base de datos "postgres" que es como lllamamos a la base de datos del docker-compose nos dará este error.
+
+![ErrorBD](/img/basededatosYaExistente.png)
+
+Por ello debemos de rellenar los datos y llamar a la base de datos con otro nombre
+
+![ODOO](/img/newDatabase.png)
+
+Después de eso podemos logearnos con el email y contraseña que pusimos al registrar la bd
+
+![ODOO](/img/entramosLogin.png)
+
+Al registrarnos ya podemos estar dentro de Odoo
+
+![ODOO](/img/entramos en odoo.png)
+
+
+
+
+
+
+
+
+
 

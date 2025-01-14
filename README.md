@@ -1,11 +1,25 @@
-# INSTALACIÓN DE ODDO CON DOCKER-COMPOSE
+# INSTALACIÓN DE ODOO CON DOCKER-COMPOSE
 
-Primero creamos un nuevo repositorio que llamaremos Tarea_10_SXE en el que subiremos nuestro proyecto a Github.
-Entramos en la terminal y creamos una nueva carpeta, en nuestro caso se llamara *Odoo* en la que podremos añadir todos los archivos relacionados con esta instalación.
+Este documento explica cómo instalar Odoo con Docker Compose, configurando Odoo, PostgreSQL y PgAdmin. A continuación, se detallan los pasos para crear y ejecutar los contenedores necesarios para que el sistema funcione correctamente.
 
-EL primer paso para instalar el Odoo con docker es realizar nuestro docker-compose.yml, el archivo con el que podremos crear y poner en funcionamento los contenedores de nuestro servicio que en este caso será : Odoo, nuestro servicio base y por ende el más importante, PostgresSQL, la BD que utilizaremos para hacer funcionar nuestro servicio base y por último PGAdmin, un gestor de base de datos que nos permitirá visualizar de manera más gráfica y con una interfaz el contenido de las BD.
+### 1. Crear el repositorio
 
-Podemos sacar la información que necesitanmos para nuestro archivo de instalación en docker HUB. Nuestroi archivo quedará así
+Comienza creando un nuevo repositorio llamado `Tarea_10_SXE` en GitHub, donde se almacenará el proyecto.
+
+### 2. Crear la carpeta del proyecto
+
+En tu terminal, crea una nueva carpeta para el proyecto. En este caso, la llamaremos `Odoo`, y dentro de ella agregarás todos los archivos necesarios para esta instalación.
+
+```bash
+mkdir Odoo
+cd Odoo
+```
+
+### 3. Realizar nuestro docker-compose.yml
+
+Para instalar el Odoo con docker debemos realizar nuestro docker-compose.yml, el archivo con el que podremos crear y poner en funcionamento los contenedores de nuestro servicio que en este caso será : Odoo, nuestro servicio base y por ende el más importante, PostgresSQL, la BD que utilizaremos para hacer funcionar nuestro servicio base y por último PGAdmin, un gestor de base de datos que nos permitirá visualizar de manera más gráfica y con una interfaz el contenido de las BD.
+
+Podemos sacar la información que necesitanmos para nuestro archivo de instalación en docker HUB. Nuestro archivo quedará así:
 
 ```
 services:  # Definición de los servicios que utilizará la aplicación
@@ -59,7 +73,6 @@ volumes:  # Definición de volúmenes persistentes para los datos de los servici
 Al instalar este docker-compose hemos tenido este problema.
 ![Problema](/img/Screenshot_20250114_114033.png)
 
-
 AL ver cual era el servicio que estaba utilizando ya de por si este puerto podemos ver que es postgres.
 ![postgres](/img/postgresEnUso.png)
 
@@ -80,10 +93,12 @@ sudo docker ps -a
 
 ![subimosContenedores](/img/subidacontenedores.png)
 
-Ahoara ya podemos entrar en la dirección
+### 4. Configurar el Odoo en el navegador
 
-localhost:8069
-
+Para eso entramos en el navegador de nuestra preferencia con la dirección
+´´´
+http://localhost:8069
+´´´
 y nos encontramos con esto
 
 ![ODOO](/img/odooWEB8069.png)
@@ -104,7 +119,7 @@ Al registrarnos ya podemos estar dentro de Odoo
 
 ![ODOO](/img/entramosEnOdoo.png)
 
-### Instalación PGADMIN
+## Instalación PGADMIN
 
 Ahora que tenemos Odoo COmmunity versión 17 instalado podemos ver si PGAdmin también se ha instalado correctamente. Para eso, vamos a entrar en el localhost:5050. En la interfaz colocamos los datos que pusimos en el localhost para el registro
 
@@ -122,9 +137,17 @@ Posteriormente colocamos el puerto, la bd, los datos, el username...
 
 ![PGADMIN](/img/registroServer2.png)
 
-Guardamos elservidor y tendremos esto en PGADMIN, comprobando su funcionamento
+Guardamos el servidor y tendremos esto en PGADMIN, comprobando su funcionamento
 
 ![PGADMIN](/img/funcionamientoPGADMIN.png)
+
+## PREGUNTAS SOBRE LA TAREA
+
+¿Que ocurre si en el ordenador local el puerto 5432 está ocupado? ¿Y si lo estuviese el 8069? ¿Como puedes solucionarlo?
+
+Esta pregunta ya ha sido respondida a lo largo del ejercicio cuando el puerto 5432 estaba efectivamente ocupado por un proceso. Ya vimos la solución para el puerto 5432 pero cual sería la solución para el 8069?
+
+Sería lo mismo podemos modificar el puerto para 8070:8069 y reiniciar los contenedores como hicimos con el otro puerto. Así no tendremos problemas y conseguimos ejecutar los servicios sin fallos. 
 
 
 

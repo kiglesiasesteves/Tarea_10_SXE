@@ -102,7 +102,7 @@ Después de eso podemos logearnos con el email y contraseña que pusimos al regi
 
 Al registrarnos ya podemos estar dentro de Odoo
 
-![ODOO](/img/entramos en odoo.png)
+![ODOO](/img/entramosEnOdoo.png)
 
 
 

@@ -4,11 +4,11 @@ Este documento explica cómo instalar Odoo con Docker Compose, configurando Odoo
 
 # Índice
 
-1. [Crear el repositorio](#crear-el-repositorio)
-2. [Crear la carpeta del proyecto](#crear-la-carpeta-del-proyecto)
-3. [Realizar nuestro docker-compose.yml](#realizar-nuestro-docker-compose.yml)
-5. [Configurar el Odoo en el navegador](#configurar-el-odoo-en-el-navegador)
-6. [Instalación de PGAdmin](#instalación-de-pgadmin)
+1. [Crear el repositorio](#Crear-el-repositorio)
+2. [Crear la carpeta del proyecto](#Crear-la-carpeta-del-proyecto)
+3. [Realizar nuestro docker-compose.yml](#Realizar-nuestro-docker-compose.yml)
+5. [Configurar el Odoo en el navegador](#Configurar-el-odoo-en-el-navegador)
+6. [Instalación de PGAdmin](#Instalación-PGADMIN)
 7. [Preguntas sobre la tarea](#preguntas-sobre-la-tarea)
 
 

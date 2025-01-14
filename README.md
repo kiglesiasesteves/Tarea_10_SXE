@@ -2,6 +2,17 @@
 
 Este documento explica cómo instalar Odoo con Docker Compose, configurando Odoo, PostgreSQL y PgAdmin. A continuación, se detallan los pasos para crear y ejecutar los contenedores necesarios para que el sistema funcione correctamente.
 
+# Índice
+
+1. [Crear el repositorio](#crear-el-repositorio)
+2. [Crear la carpeta del proyecto](#crear-la-carpeta-del-proyecto)
+3. [Realizar nuestro docker-compose.yml](#realizar-nuestro-docker-compose.yml)
+5. [Configurar el Odoo en el navegador](#configurar-el-odoo-en-el-navegador)
+6. [Instalación de PGAdmin](#instalación-de-pgadmin)
+7. [Preguntas sobre la tarea](#preguntas-sobre-la-tarea)
+
+
+
 ### 1. Crear el repositorio
 
 Comienza creando un nuevo repositorio llamado `Tarea_10_SXE` en GitHub, donde se almacenará el proyecto.
